@@ -1,20 +1,36 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import App from "../views/App.vue";
+import LoginView from "@/views/LoginView.vue";
+import AssistantView from "@/views/AssistantView.vue";
+import DirectorView from "@/views/DirectorView.vue";
+import MedecinView from "@/views/MedecinView.vue"; // Corrected the import
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "App",
+    component: App,
+    /* redirect: "/login", // Redirects root path to /login */
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/login",
+    name: "Login",
+    component: LoginView,
+  },
+  {
+    path: "/assistant",
+    name: "Assistant",
+    component: AssistantView,
+  },
+  {
+    path: "/director",
+    name: "Director",
+    component: DirectorView,
+  },
+  {
+    path: "/medecin",
+    name: "Medecin",
+    component: MedecinView,
   },
 ];
 
